@@ -15,7 +15,6 @@ architecture behavioral of vendingMachine is
 
 	type status is (Start, Digit1, Digit2, Delivery, Error);
 	signal currentStatus: status := Start;
---	signal nextStatus: status;
 	
 	-- Deboucing filter variables
 	signal previousReset, resetOK: std_logic := '0';

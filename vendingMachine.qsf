@@ -52,4 +52,34 @@ set_global_assignment -name VHDL_FILE vendingMachine.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "E:/Software Development/VHDL/Diseño Digital Con VHDL/Unidad II/Práctica 7 - Maquina de estados finitos/Vending machine/Waveform.vwf"
+set_location_assignment PIN_17 -to clk
+set_location_assignment PIN_40 -to display1[6]
+set_location_assignment PIN_41 -to display1[5]
+set_location_assignment PIN_42 -to display1[4]
+set_location_assignment PIN_43 -to display1[3]
+set_location_assignment PIN_44 -to display1[2]
+set_location_assignment PIN_45 -to display1[1]
+set_location_assignment PIN_47 -to display1[0]
+set_location_assignment PIN_143 -to display2[6]
+set_location_assignment PIN_142 -to display2[5]
+set_location_assignment PIN_141 -to display2[4]
+set_location_assignment PIN_139 -to display2[3]
+set_location_assignment PIN_137 -to display2[2]
+set_location_assignment PIN_136 -to display2[1]
+set_location_assignment PIN_135 -to display2[0]
+set_location_assignment PIN_24 -to enter
+set_location_assignment PIN_25 -to key
+set_location_assignment PIN_104 -to input[3]
+set_location_assignment PIN_103 -to input[2]
+set_location_assignment PIN_101 -to input[1]
+set_location_assignment PIN_100 -to input[0]
+set_location_assignment PIN_52 -to Q[2]
+set_location_assignment PIN_53 -to Q[1]
+set_location_assignment PIN_55 -to Q[0]
+set_location_assignment PIN_26 -to reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

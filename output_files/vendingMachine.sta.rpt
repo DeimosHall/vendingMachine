@@ -1,0 +1,1752 @@
+TimeQuest Timing Analyzer report for vendingMachine
+Tue Jun 01 21:42:10 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Setup: 'enterOK'
+ 13. Slow Model Hold: 'enterOK'
+ 14. Slow Model Hold: 'clk'
+ 15. Slow Model Recovery: 'enterOK'
+ 16. Slow Model Removal: 'enterOK'
+ 17. Slow Model Minimum Pulse Width: 'clk'
+ 18. Slow Model Minimum Pulse Width: 'enterOK'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'clk'
+ 29. Fast Model Setup: 'enterOK'
+ 30. Fast Model Hold: 'clk'
+ 31. Fast Model Hold: 'enterOK'
+ 32. Fast Model Recovery: 'enterOK'
+ 33. Fast Model Removal: 'enterOK'
+ 34. Fast Model Minimum Pulse Width: 'clk'
+ 35. Fast Model Minimum Pulse Width: 'enterOK'
+ 36. Setup Times
+ 37. Hold Times
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Recovery Transfers
+ 48. Removal Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; vendingMachine                                                    ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }     ;
+; enterOK    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { enterOK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+
+
++---------------------------------------------------------------------+
+; Slow Model Fmax Summary                                             ;
++------------+-----------------+------------+-------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                    ;
++------------+-----------------+------------+-------------------------+
+; 203.17 MHz ; 203.17 MHz      ; clk        ;                         ;
+; 516.0 MHz  ; 196.85 MHz      ; enterOK    ; limit due to hold check ;
++------------+-----------------+------------+-------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Slow Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; clk     ; -3.922 ; -100.433      ;
+; enterOK ; -0.938 ; -6.622        ;
++---------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; enterOK ; -2.540 ; -11.841       ;
+; clk     ; -2.538 ; -2.538        ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Slow Model Recovery Summary     ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; enterOK ; 0.098 ; 0.000         ;
++---------+-------+---------------+
+
+
++---------------------------------+
+; Slow Model Removal Summary      ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; enterOK ; 0.636 ; 0.000         ;
++---------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; clk     ; -1.941 ; -43.493             ;
+; enterOK ; -0.742 ; -19.292             ;
++---------+--------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                            ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.922 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.950      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.869 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.897      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.861 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.901      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.751 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.791      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.727 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.755      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.605 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.633      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.575 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.560 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.588      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.531 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 4.559      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
+; -3.522 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.562      ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'enterOK'                                                                                                    ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -0.938 ; currentStatus.Error    ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.978      ;
+; -0.846 ; currentStatus.Start    ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.886      ;
+; -0.823 ; currentStatus.Digit2   ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.863      ;
+; -0.819 ; currentStatus.Delivery ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.859      ;
+; -0.794 ; currentStatus.Start    ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.834      ;
+; -0.779 ; currentStatus.Error    ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.819      ;
+; -0.757 ; currentStatus.Start    ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.797      ;
+; -0.667 ; currentStatus.Error    ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.707      ;
+; -0.626 ; currentStatus.Digit1   ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.666      ;
+; -0.546 ; currentStatus.Digit2   ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.586      ;
+; -0.534 ; currentStatus.Digit1   ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.574      ;
+; -0.519 ; currentStatus.Digit1   ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.559      ;
+; -0.517 ; number2[1]             ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.557      ;
+; -0.513 ; currentStatus.Digit2   ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.553      ;
+; -0.472 ; currentStatus.Delivery ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.512      ;
+; -0.471 ; currentStatus.Delivery ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.511      ;
+; -0.471 ; currentStatus.Delivery ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.511      ;
+; -0.328 ; currentStatus.Start    ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.368      ;
+; -0.320 ; currentStatus.Digit2   ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.360      ;
+; -0.253 ; currentStatus.Digit2   ; number2[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.293      ;
+; -0.252 ; currentStatus.Digit2   ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.292      ;
+; -0.250 ; currentStatus.Digit2   ; currentStatus.Delivery ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.290      ;
+; -0.247 ; currentStatus.Digit2   ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.287      ;
+; -0.244 ; currentStatus.Delivery ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.284      ;
+; -0.242 ; currentStatus.Digit2   ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.282      ;
+; -0.218 ; number2[2]             ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.258      ;
+; -0.189 ; number2[0]             ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.229      ;
+; -0.058 ; currentStatus.Digit1   ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.098      ;
+; -0.056 ; currentStatus.Digit1   ; number2[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.096      ;
+; -0.055 ; currentStatus.Digit1   ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.095      ;
+; -0.044 ; currentStatus.Delivery ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.084      ;
+; -0.043 ; number2[3]             ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 1.083      ;
+; 0.101  ; keyOK                  ; currentStatus.Digit2   ; clk          ; enterOK     ; 1.000        ; 1.428      ; 2.367      ;
+; 0.101  ; keyOK                  ; currentStatus.Delivery ; clk          ; enterOK     ; 1.000        ; 1.428      ; 2.367      ;
+; 0.101  ; keyOK                  ; currentStatus.Digit1   ; clk          ; enterOK     ; 1.000        ; 1.428      ; 2.367      ;
+; 0.183  ; resetOK                ; number2[0]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number1[0]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number2[1]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number1[1]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number2[2]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number1[2]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number2[3]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.183  ; resetOK                ; number1[3]             ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.265      ;
+; 0.235  ; currentStatus.Start    ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.805      ;
+; 0.235  ; currentStatus.Error    ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.805      ;
+; 0.467  ; keyOK                  ; currentStatus.Start    ; clk          ; enterOK     ; 1.000        ; 1.428      ; 2.001      ;
+; 0.961  ; keyOK                  ; currentStatus.Error    ; clk          ; enterOK     ; 1.000        ; 1.428      ; 1.507      ;
+; 1.844  ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.500        ; 4.141      ; 3.141      ;
+; 1.844  ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.500        ; 4.141      ; 3.141      ;
+; 1.844  ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.500        ; 4.141      ; 3.141      ;
+; 2.198  ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.500        ; 4.141      ; 2.787      ;
+; 2.344  ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 1.000        ; 4.141      ; 3.141      ;
+; 2.344  ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 1.000        ; 4.141      ; 3.141      ;
+; 2.344  ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 1.000        ; 4.141      ; 3.141      ;
+; 2.698  ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 4.141      ; 2.787      ;
+; 2.774  ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.500        ; 4.141      ; 2.211      ;
+; 3.274  ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 4.141      ; 2.211      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'enterOK'                                                                                                     ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -2.540 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 4.141      ; 2.211      ;
+; -2.539 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 4.141      ; 2.212      ;
+; -2.379 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.000        ; 4.141      ; 2.372      ;
+; -2.192 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.000        ; 4.141      ; 2.559      ;
+; -2.191 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.000        ; 4.141      ; 2.560      ;
+; -2.040 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; -0.500       ; 4.141      ; 2.211      ;
+; -2.039 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; -0.500       ; 4.141      ; 2.212      ;
+; -1.879 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; -0.500       ; 4.141      ; 2.372      ;
+; -1.692 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; -0.500       ; 4.141      ; 2.559      ;
+; -1.691 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; -0.500       ; 4.141      ; 2.560      ;
+; -0.228 ; keyOK                  ; currentStatus.Start    ; clk          ; enterOK     ; 0.000        ; 1.428      ; 1.506      ;
+; -0.227 ; keyOK                  ; currentStatus.Error    ; clk          ; enterOK     ; 0.000        ; 1.428      ; 1.507      ;
+; 0.499  ; currentStatus.Error    ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499  ; currentStatus.Start    ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.805      ;
+; 0.551  ; resetOK                ; number2[0]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number1[0]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number2[1]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number1[1]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number2[2]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number1[2]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number2[3]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.551  ; resetOK                ; number1[3]             ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.265      ;
+; 0.633  ; keyOK                  ; currentStatus.Digit2   ; clk          ; enterOK     ; 0.000        ; 1.428      ; 2.367      ;
+; 0.633  ; keyOK                  ; currentStatus.Delivery ; clk          ; enterOK     ; 0.000        ; 1.428      ; 2.367      ;
+; 0.633  ; keyOK                  ; currentStatus.Digit1   ; clk          ; enterOK     ; 0.000        ; 1.428      ; 2.367      ;
+; 0.777  ; number2[3]             ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.083      ;
+; 0.778  ; currentStatus.Delivery ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.084      ;
+; 0.789  ; currentStatus.Digit1   ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.095      ;
+; 0.790  ; currentStatus.Digit1   ; number2[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.096      ;
+; 0.792  ; currentStatus.Digit1   ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.098      ;
+; 0.923  ; number2[0]             ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.229      ;
+; 0.952  ; number2[2]             ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.258      ;
+; 0.976  ; currentStatus.Digit2   ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.282      ;
+; 0.978  ; currentStatus.Delivery ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.284      ;
+; 0.981  ; currentStatus.Digit2   ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.287      ;
+; 0.984  ; currentStatus.Digit2   ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.290      ;
+; 0.986  ; currentStatus.Digit2   ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.292      ;
+; 0.987  ; currentStatus.Digit2   ; number2[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.293      ;
+; 1.054  ; currentStatus.Digit2   ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.360      ;
+; 1.062  ; currentStatus.Start    ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.368      ;
+; 1.205  ; currentStatus.Delivery ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.511      ;
+; 1.205  ; currentStatus.Delivery ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.511      ;
+; 1.206  ; currentStatus.Delivery ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.512      ;
+; 1.247  ; currentStatus.Digit2   ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.553      ;
+; 1.251  ; number2[1]             ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.557      ;
+; 1.253  ; currentStatus.Digit1   ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.559      ;
+; 1.268  ; currentStatus.Digit1   ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.574      ;
+; 1.280  ; currentStatus.Digit2   ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.586      ;
+; 1.360  ; currentStatus.Digit1   ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.666      ;
+; 1.401  ; currentStatus.Error    ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.707      ;
+; 1.491  ; currentStatus.Start    ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.797      ;
+; 1.513  ; currentStatus.Error    ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.819      ;
+; 1.528  ; currentStatus.Start    ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.834      ;
+; 1.553  ; currentStatus.Delivery ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.859      ;
+; 1.557  ; currentStatus.Digit2   ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.863      ;
+; 1.580  ; currentStatus.Start    ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.886      ;
+; 1.672  ; currentStatus.Error    ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 1.978      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                             ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.538 ; enterOK                          ; enterOK                          ; enterOK      ; clk         ; 0.000        ; 2.733      ; 0.805      ;
+; -2.038 ; enterOK                          ; enterOK                          ; enterOK      ; clk         ; -0.500       ; 2.733      ; 0.805      ;
+; 0.499  ; resetOK                          ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499  ; keyOK                            ; keyOK                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 1.156  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.462      ;
+; 1.164  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.164  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.166  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.171  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.477      ;
+; 1.172  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.172  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.176  ; \enterFilter:bouncingCounter[20] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.186  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.492      ;
+; 1.187  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.493      ;
+; 1.187  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.493      ;
+; 1.213  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.217  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.523      ;
+; 1.217  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.523      ;
+; 1.217  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.523      ;
+; 1.218  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.221  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.527      ;
+; 1.225  ; \enterFilter:bouncingCounter[21] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.531      ;
+; 1.234  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.540      ;
+; 1.235  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.541      ;
+; 1.244  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.550      ;
+; 1.489  ; previousEnter                    ; enterOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.795      ;
+; 1.490  ; previousReset                    ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.796      ;
+; 1.643  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.643  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.645  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.951      ;
+; 1.650  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.956      ;
+; 1.651  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.957      ;
+; 1.655  ; \enterFilter:bouncingCounter[20] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.665  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.971      ;
+; 1.666  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.972      ;
+; 1.693  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.999      ;
+; 1.693  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.999      ;
+; 1.697  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.697  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.701  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.007      ;
+; 1.714  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.020      ;
+; 1.715  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.021      ;
+; 1.724  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.030      ;
+; 1.729  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.035      ;
+; 1.731  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.736  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.042      ;
+; 1.745  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.051      ;
+; 1.748  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.066      ;
+; 1.751  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.057      ;
+; 1.752  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.058      ;
+; 1.776  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.082      ;
+; 1.779  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
+; 1.783  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.783  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.784  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.090      ;
+; 1.787  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.093      ;
+; 1.800  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.106      ;
+; 1.801  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.107      ;
+; 1.814  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.132      ;
+; 1.815  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.815  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.817  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
+; 1.822  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.128      ;
+; 1.831  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
+; 1.834  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.152      ;
+; 1.837  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.143      ;
+; 1.838  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 1.848  ; \enterFilter:bouncingCounter[20] ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.154      ;
+; 1.849  ; \enterFilter:bouncingCounter[20] ; enterOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.155      ;
+; 1.862  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.168      ;
+; 1.869  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.870  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.176      ;
+; 1.883  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.886  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 1.900  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.218      ;
+; 1.901  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 1.903  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.209      ;
+; 1.908  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.214      ;
+; 1.914  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.220      ;
+; 1.917  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.223      ;
+; 1.920  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.238      ;
+; 1.923  ; \enterFilter:bouncingCounter[20] ; keyOK                            ; clk          ; clk         ; 0.000        ; -0.020     ; 2.209      ;
+; 1.923  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.229      ;
+; 1.948  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.254      ;
+; 1.955  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.261      ;
+; 1.955  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.261      ;
+; 1.969  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.275      ;
+; 1.969  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.275      ;
+; 1.972  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.278      ;
+; 1.986  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.304      ;
+; 1.987  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.293      ;
+; 1.989  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.295      ;
+; 1.991  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.297      ;
+; 1.994  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.300      ;
+; 2.000  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.306      ;
+; 2.003  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.309      ;
+; 2.006  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.324      ;
+; 2.009  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.315      ;
+; 2.028  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.334      ;
+; 2.033  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.012      ; 2.351      ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'enterOK'                                                                                   ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.098 ; resetOK   ; currentStatus.Digit2   ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.350      ;
+; 0.098 ; resetOK   ; currentStatus.Delivery ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.350      ;
+; 0.098 ; resetOK   ; currentStatus.Error    ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.350      ;
+; 0.098 ; resetOK   ; currentStatus.Start    ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.350      ;
+; 0.098 ; resetOK   ; currentStatus.Digit1   ; clk          ; enterOK     ; 1.000        ; 1.408      ; 2.350      ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'enterOK'                                                                                    ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.636 ; resetOK   ; currentStatus.Digit2   ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.350      ;
+; 0.636 ; resetOK   ; currentStatus.Delivery ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.350      ;
+; 0.636 ; resetOK   ; currentStatus.Error    ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.350      ;
+; 0.636 ; resetOK   ; currentStatus.Start    ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.350      ;
+; 0.636 ; resetOK   ; currentStatus.Digit1   ; clk          ; enterOK     ; 0.000        ; 1.408      ; 2.350      ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; clk   ; Rise       ; clk                                  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; enterOK                              ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; enterOK                              ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; keyOK                                ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; keyOK                                ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; previousEnter                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; previousEnter                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; previousKey                          ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; previousKey                          ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; previousReset                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; previousReset                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; resetOK                              ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; resetOK                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]|clk  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'enterOK'                                                                     ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Delivery     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Delivery     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit1       ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit1       ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit2       ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit2       ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Error        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Error        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Start        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Start        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number1[0]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number1[0]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number1[1]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number1[1]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number1[2]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number1[2]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number1[3]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number1[3]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number2[0]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number2[0]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number2[1]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number2[1]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number2[2]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number2[2]                 ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; enterOK ; Rise       ; number2[3]                 ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; enterOK ; Rise       ; number2[3]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Delivery|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Delivery|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit2|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit2|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Error|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Error|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Start|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Start|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; enterOK|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; enterOK|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; enter     ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+; key       ; clk        ; 5.968 ; 5.968 ; Rise       ; clk             ;
+; reset     ; clk        ; 5.240 ; 5.240 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; 5.265 ; 5.265 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; 5.265 ; 5.265 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; 4.893 ; 4.893 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; 4.822 ; 4.822 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; 4.969 ; 4.969 ; Rise       ; enterOK         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; enter     ; clk        ; -3.640 ; -3.640 ; Rise       ; clk             ;
+; key       ; clk        ; -3.650 ; -3.650 ; Rise       ; clk             ;
+; reset     ; clk        ; -3.663 ; -3.663 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; -4.556 ; -4.556 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; -4.999 ; -4.999 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; -4.627 ; -4.627 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; -4.556 ; -4.556 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; -4.703 ; -4.703 ; Rise       ; enterOK         ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; Q[*]         ; enterOK    ; 11.061 ; 11.061 ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 10.356 ; 10.356 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 11.061 ; 11.061 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 10.095 ; 10.095 ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 10.396 ; 10.396 ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 10.396 ; 10.396 ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 10.054 ; 10.054 ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 10.055 ; 10.055 ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 10.052 ; 10.052 ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 10.033 ; 10.033 ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 10.051 ; 10.051 ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 10.023 ; 10.023 ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 11.094 ; 11.094 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 11.094 ; 11.094 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 11.080 ; 11.080 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 10.741 ; 10.741 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 10.738 ; 10.738 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 10.760 ; 10.760 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 10.751 ; 10.751 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 10.759 ; 10.759 ; Rise       ; enterOK         ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; Q[*]         ; enterOK    ; 9.951  ; 9.951  ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 10.351 ; 10.351 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 10.365 ; 10.365 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 9.951  ; 9.951  ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 9.236  ; 9.236  ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 9.845  ; 9.845  ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 9.500  ; 9.500  ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 9.497  ; 9.497  ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 9.500  ; 9.500  ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 9.246  ; 9.246  ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 9.497  ; 9.497  ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 9.236  ; 9.236  ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 10.270 ; 10.270 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 10.633 ; 10.633 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 10.618 ; 10.618 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 10.270 ; 10.270 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 10.273 ; 10.273 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 10.298 ; 10.298 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 10.279 ; 10.279 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 10.294 ; 10.294 ; Rise       ; enterOK         ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------+
+; Fast Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; clk     ; -0.578 ; -13.463       ;
+; enterOK ; 0.344  ; 0.000         ;
++---------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; clk     ; -1.345 ; -1.345        ;
+; enterOK ; -1.292 ; -6.142        ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Recovery Summary     ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; enterOK ; 0.413 ; 0.000         ;
++---------+-------+---------------+
+
+
++---------------------------------+
+; Fast Model Removal Summary      ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; enterOK ; 0.467 ; 0.000         ;
++---------+-------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; clk     ; -1.380 ; -29.380             ;
+; enterOK ; -0.500 ; -13.000             ;
++---------+--------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                            ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.578 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.598      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.571 ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.603      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.567 ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.587      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.537 ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.569      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.532 ; \enterFilter:bouncingCounter[8]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.552      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.521 ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.541      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.508 ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.528      ;
+; -0.492 ; \enterFilter:bouncingCounter[16] ; keyOK                            ; clk          ; clk         ; 1.000        ; -0.235     ; 1.289      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.491 ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 1.000        ; -0.012     ; 1.511      ;
+; -0.485 ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.529      ;
+; -0.485 ; \enterFilter:bouncingCounter[9]  ; keyOK                            ; clk          ; clk         ; 1.000        ; -0.223     ; 1.294      ;
+; -0.481 ; \enterFilter:bouncingCounter[18] ; keyOK                            ; clk          ; clk         ; 1.000        ; -0.235     ; 1.278      ;
+; -0.476 ; \enterFilter:bouncingCounter[16] ; previousKey                      ; clk          ; clk         ; 1.000        ; 0.001      ; 1.509      ;
+; -0.476 ; \enterFilter:bouncingCounter[16] ; previousEnter                    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.509      ;
+; -0.476 ; \enterFilter:bouncingCounter[16] ; previousReset                    ; clk          ; clk         ; 1.000        ; 0.001      ; 1.509      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.473 ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.505      ;
+; -0.469 ; \enterFilter:bouncingCounter[9]  ; previousKey                      ; clk          ; clk         ; 1.000        ; 0.013      ; 1.514      ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'enterOK'                                                                                                   ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.344 ; currentStatus.Error    ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.688      ;
+; 0.385 ; currentStatus.Digit2   ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.647      ;
+; 0.385 ; currentStatus.Start    ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.647      ;
+; 0.392 ; currentStatus.Delivery ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.640      ;
+; 0.400 ; currentStatus.Start    ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.632      ;
+; 0.413 ; currentStatus.Error    ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.619      ;
+; 0.431 ; currentStatus.Start    ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.601      ;
+; 0.455 ; currentStatus.Digit1   ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.577      ;
+; 0.457 ; currentStatus.Error    ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.575      ;
+; 0.477 ; currentStatus.Digit2   ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.555      ;
+; 0.480 ; currentStatus.Digit2   ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.552      ;
+; 0.485 ; resetOK                ; number2[0]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number1[0]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number2[1]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number1[1]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number2[2]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number1[2]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number2[3]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.485 ; resetOK                ; number1[3]             ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.882      ;
+; 0.489 ; currentStatus.Digit1   ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.543      ;
+; 0.492 ; currentStatus.Digit1   ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.540      ;
+; 0.499 ; number2[1]             ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.533      ;
+; 0.502 ; currentStatus.Delivery ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.530      ;
+; 0.504 ; currentStatus.Delivery ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.528      ;
+; 0.504 ; currentStatus.Delivery ; number2[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.528      ;
+; 0.527 ; currentStatus.Digit2   ; currentStatus.Delivery ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.505      ;
+; 0.549 ; currentStatus.Start    ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.483      ;
+; 0.549 ; currentStatus.Digit2   ; number2[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.483      ;
+; 0.550 ; currentStatus.Digit2   ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.482      ;
+; 0.551 ; currentStatus.Digit2   ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.481      ;
+; 0.554 ; currentStatus.Digit2   ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.478      ;
+; 0.557 ; currentStatus.Digit2   ; number2[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.475      ;
+; 0.561 ; currentStatus.Delivery ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.471      ;
+; 0.573 ; number2[2]             ; number1[2]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.459      ;
+; 0.588 ; number2[0]             ; number1[0]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.444      ;
+; 0.617 ; currentStatus.Digit1   ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.415      ;
+; 0.619 ; currentStatus.Digit1   ; number2[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.413      ;
+; 0.620 ; currentStatus.Digit1   ; number2[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.412      ;
+; 0.624 ; currentStatus.Delivery ; number1[1]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.408      ;
+; 0.624 ; number2[3]             ; number1[3]             ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.408      ;
+; 0.665 ; currentStatus.Start    ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; currentStatus.Error    ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 0.000      ; 0.367      ;
+; 0.695 ; keyOK                  ; currentStatus.Digit2   ; clk          ; enterOK     ; 1.000        ; 0.571      ; 0.908      ;
+; 0.695 ; keyOK                  ; currentStatus.Delivery ; clk          ; enterOK     ; 1.000        ; 0.571      ; 0.908      ;
+; 0.695 ; keyOK                  ; currentStatus.Digit1   ; clk          ; enterOK     ; 1.000        ; 0.571      ; 0.908      ;
+; 0.907 ; keyOK                  ; currentStatus.Start    ; clk          ; enterOK     ; 1.000        ; 0.571      ; 0.696      ;
+; 1.079 ; keyOK                  ; currentStatus.Error    ; clk          ; enterOK     ; 1.000        ; 0.571      ; 0.524      ;
+; 1.252 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.500        ; 1.754      ; 1.175      ;
+; 1.252 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.500        ; 1.754      ; 1.175      ;
+; 1.252 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.500        ; 1.754      ; 1.175      ;
+; 1.496 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.500        ; 1.754      ; 0.931      ;
+; 1.672 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.500        ; 1.754      ; 0.755      ;
+; 1.752 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 1.000        ; 1.754      ; 1.175      ;
+; 1.752 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 1.000        ; 1.754      ; 1.175      ;
+; 1.752 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 1.000        ; 1.754      ; 1.175      ;
+; 1.996 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 1.000        ; 1.754      ; 0.931      ;
+; 2.172 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 1.000        ; 1.754      ; 0.755      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                             ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.345 ; enterOK                          ; enterOK                          ; enterOK      ; clk         ; 0.000        ; 1.419      ; 0.367      ;
+; -0.845 ; enterOK                          ; enterOK                          ; enterOK      ; clk         ; -0.500       ; 1.419      ; 0.367      ;
+; 0.215  ; resetOK                          ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; keyOK                            ; keyOK                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.354  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.506      ;
+; 0.355  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.356  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.358  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360  ; \enterFilter:bouncingCounter[20] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.367  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371  ; \enterFilter:bouncingCounter[21] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.377  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.493  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.645      ;
+; 0.494  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.496  ; previousEnter                    ; enterOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497  ; previousReset                    ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498  ; \enterFilter:bouncingCounter[20] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.505  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.506  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.658      ;
+; 0.507  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.659      ;
+; 0.509  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.511  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.517  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
+; 0.520  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.672      ;
+; 0.528  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.531  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.695      ;
+; 0.532  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.540  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.692      ;
+; 0.541  ; \enterFilter:bouncingCounter[20] ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.694      ;
+; 0.541  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.542  ; \enterFilter:bouncingCounter[20] ; enterOK                          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.695      ;
+; 0.542  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.694      ;
+; 0.544  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.546  ; \enterFilter:bouncingCounter[19] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.552  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.553  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.561  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.563  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.715      ;
+; 0.564  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
+; 0.566  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.730      ;
+; 0.567  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.719      ;
+; 0.571  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[11] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.735      ;
+; 0.575  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.727      ;
+; 0.576  ; \enterFilter:bouncingCounter[15] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.728      ;
+; 0.579  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.580  ; \enterFilter:bouncingCounter[7]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.582  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.587  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.596  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.748      ;
+; 0.598  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.750      ;
+; 0.599  ; \enterFilter:bouncingCounter[6]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.751      ;
+; 0.601  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.765      ;
+; 0.601  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.602  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.754      ;
+; 0.606  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[12] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.770      ;
+; 0.610  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.614  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614  ; \enterFilter:bouncingCounter[3]  ; \enterFilter:bouncingCounter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.617  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.769      ;
+; 0.622  ; \enterFilter:bouncingCounter[14] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.774      ;
+; 0.625  ; \enterFilter:bouncingCounter[21] ; enterOK                          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.778      ;
+; 0.626  ; \enterFilter:bouncingCounter[21] ; resetOK                          ; clk          ; clk         ; 0.000        ; 0.001      ; 0.779      ;
+; 0.631  ; \enterFilter:bouncingCounter[18] ; \enterFilter:bouncingCounter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.783      ;
+; 0.633  ; \enterFilter:bouncingCounter[11] ; \enterFilter:bouncingCounter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.785      ;
+; 0.634  ; \enterFilter:bouncingCounter[4]  ; \enterFilter:bouncingCounter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.636  ; \enterFilter:bouncingCounter[10] ; \enterFilter:bouncingCounter[14] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.800      ;
+; 0.636  ; \enterFilter:bouncingCounter[1]  ; \enterFilter:bouncingCounter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.636  ; \enterFilter:bouncingCounter[0]  ; \enterFilter:bouncingCounter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.637  ; \enterFilter:bouncingCounter[12] ; \enterFilter:bouncingCounter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.641  ; \enterFilter:bouncingCounter[9]  ; \enterFilter:bouncingCounter[13] ; clk          ; clk         ; 0.000        ; 0.012      ; 0.805      ;
+; 0.645  ; \enterFilter:bouncingCounter[13] ; \enterFilter:bouncingCounter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.647  ; \enterFilter:bouncingCounter[16] ; \enterFilter:bouncingCounter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.649  ; \enterFilter:bouncingCounter[17] ; \enterFilter:bouncingCounter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.649  ; \enterFilter:bouncingCounter[5]  ; \enterFilter:bouncingCounter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.652  ; \enterFilter:bouncingCounter[2]  ; \enterFilter:bouncingCounter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.804      ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'enterOK'                                                                                                     ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -1.292 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 1.754      ; 0.755      ;
+; -1.285 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 1.754      ; 0.762      ;
+; -1.243 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.000        ; 1.754      ; 0.804      ;
+; -1.164 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.000        ; 1.754      ; 0.883      ;
+; -1.158 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.000        ; 1.754      ; 0.889      ;
+; -0.792 ; enterOK                ; currentStatus.Error    ; enterOK      ; enterOK     ; -0.500       ; 1.754      ; 0.755      ;
+; -0.785 ; enterOK                ; currentStatus.Start    ; enterOK      ; enterOK     ; -0.500       ; 1.754      ; 0.762      ;
+; -0.743 ; enterOK                ; currentStatus.Digit2   ; enterOK      ; enterOK     ; -0.500       ; 1.754      ; 0.804      ;
+; -0.664 ; enterOK                ; currentStatus.Delivery ; enterOK      ; enterOK     ; -0.500       ; 1.754      ; 0.883      ;
+; -0.658 ; enterOK                ; currentStatus.Digit1   ; enterOK      ; enterOK     ; -0.500       ; 1.754      ; 0.889      ;
+; -0.199 ; keyOK                  ; currentStatus.Error    ; clk          ; enterOK     ; 0.000        ; 0.571      ; 0.524      ;
+; -0.194 ; keyOK                  ; currentStatus.Start    ; clk          ; enterOK     ; 0.000        ; 0.571      ; 0.529      ;
+; 0.185  ; keyOK                  ; currentStatus.Digit2   ; clk          ; enterOK     ; 0.000        ; 0.571      ; 0.908      ;
+; 0.185  ; keyOK                  ; currentStatus.Delivery ; clk          ; enterOK     ; 0.000        ; 0.571      ; 0.908      ;
+; 0.185  ; keyOK                  ; currentStatus.Digit1   ; clk          ; enterOK     ; 0.000        ; 0.571      ; 0.908      ;
+; 0.215  ; currentStatus.Error    ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; currentStatus.Start    ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.256  ; currentStatus.Delivery ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.408      ;
+; 0.256  ; number2[3]             ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.408      ;
+; 0.260  ; currentStatus.Digit1   ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261  ; currentStatus.Digit1   ; number2[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.413      ;
+; 0.263  ; currentStatus.Digit1   ; currentStatus.Digit2   ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.415      ;
+; 0.292  ; number2[0]             ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.444      ;
+; 0.307  ; number2[2]             ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.459      ;
+; 0.319  ; currentStatus.Delivery ; currentStatus.Error    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.471      ;
+; 0.323  ; currentStatus.Digit2   ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.475      ;
+; 0.326  ; currentStatus.Digit2   ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.478      ;
+; 0.329  ; currentStatus.Digit2   ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.481      ;
+; 0.330  ; currentStatus.Digit2   ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.482      ;
+; 0.331  ; currentStatus.Start    ; currentStatus.Digit1   ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.483      ;
+; 0.331  ; currentStatus.Digit2   ; number2[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.483      ;
+; 0.353  ; currentStatus.Digit2   ; currentStatus.Delivery ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.505      ;
+; 0.376  ; currentStatus.Delivery ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376  ; currentStatus.Delivery ; number1[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.528      ;
+; 0.378  ; currentStatus.Delivery ; number2[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.530      ;
+; 0.381  ; number2[1]             ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.533      ;
+; 0.388  ; currentStatus.Digit1   ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.540      ;
+; 0.391  ; currentStatus.Digit1   ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.543      ;
+; 0.395  ; resetOK                ; number2[0]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number1[0]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number2[1]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number1[1]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number2[2]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number1[2]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number2[3]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.395  ; resetOK                ; number1[3]             ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.882      ;
+; 0.400  ; currentStatus.Digit2   ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.552      ;
+; 0.403  ; currentStatus.Digit2   ; number1[3]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.555      ;
+; 0.423  ; currentStatus.Error    ; number1[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.575      ;
+; 0.425  ; currentStatus.Digit1   ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.577      ;
+; 0.449  ; currentStatus.Start    ; number1[1]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.601      ;
+; 0.467  ; currentStatus.Error    ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.619      ;
+; 0.480  ; currentStatus.Start    ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.632      ;
+; 0.488  ; currentStatus.Delivery ; currentStatus.Start    ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.640      ;
+; 0.495  ; currentStatus.Start    ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.647      ;
+; 0.495  ; currentStatus.Digit2   ; number2[0]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.647      ;
+; 0.536  ; currentStatus.Error    ; number2[2]             ; enterOK      ; enterOK     ; 0.000        ; 0.000      ; 0.688      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'enterOK'                                                                                   ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.413 ; resetOK   ; currentStatus.Digit2   ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.954      ;
+; 0.413 ; resetOK   ; currentStatus.Delivery ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.954      ;
+; 0.413 ; resetOK   ; currentStatus.Error    ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.954      ;
+; 0.413 ; resetOK   ; currentStatus.Start    ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.954      ;
+; 0.413 ; resetOK   ; currentStatus.Digit1   ; clk          ; enterOK     ; 1.000        ; 0.335      ; 0.954      ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'enterOK'                                                                                    ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.467 ; resetOK   ; currentStatus.Digit2   ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.954      ;
+; 0.467 ; resetOK   ; currentStatus.Delivery ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.954      ;
+; 0.467 ; resetOK   ; currentStatus.Error    ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.954      ;
+; 0.467 ; resetOK   ; currentStatus.Start    ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.954      ;
+; 0.467 ; resetOK   ; currentStatus.Digit1   ; clk          ; enterOK     ; 0.000        ; 0.335      ; 0.954      ;
++-------+-----------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; enterOK                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; enterOK                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; keyOK                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; keyOK                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; previousEnter                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; previousEnter                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; previousKey                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; previousKey                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; previousReset                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; previousReset                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; resetOK                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; resetOK                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[7]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \enterFilter:bouncingCounter[8]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \enterFilter:bouncingCounter[9]|clk  ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'enterOK'                                                                     ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Delivery     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Delivery     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit1       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit1       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit2       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit2       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Error        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Error        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Start        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Start        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number1[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number1[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number1[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number1[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number2[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number2[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number2[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enterOK ; Rise       ; number2[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[3]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Delivery|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Delivery|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit1|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Digit2|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Digit2|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Error|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Error|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; currentStatus.Start|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; currentStatus.Start|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; enterOK|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; enterOK|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number1[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number1[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; number2[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; number2[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enterOK ; Rise       ; statusCLK~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enterOK ; Rise       ; statusCLK~clkctrl|outclk   ;
++--------+--------------+----------------+------------------+---------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; enter     ; clk        ; 2.237 ; 2.237 ; Rise       ; clk             ;
+; key       ; clk        ; 2.715 ; 2.715 ; Rise       ; clk             ;
+; reset     ; clk        ; 2.263 ; 2.263 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; 2.473 ; 2.473 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; 2.473 ; 2.473 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; 2.366 ; 2.366 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; 2.375 ; 2.375 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; 2.436 ; 2.436 ; Rise       ; enterOK         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; enter     ; clk        ; -1.800 ; -1.800 ; Rise       ; clk             ;
+; key       ; clk        ; -1.807 ; -1.807 ; Rise       ; clk             ;
+; reset     ; clk        ; -1.818 ; -1.818 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; -2.246 ; -2.246 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; -2.353 ; -2.353 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; -2.246 ; -2.246 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; -2.255 ; -2.255 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; -2.316 ; -2.316 ; Rise       ; enterOK         ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; Q[*]         ; enterOK    ; 4.454 ; 4.454 ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 4.264 ; 4.264 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 4.454 ; 4.454 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 4.220 ; 4.220 ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 4.277 ; 4.277 ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 4.277 ; 4.277 ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 4.190 ; 4.190 ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 4.184 ; 4.184 ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 4.180 ; 4.180 ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 4.171 ; 4.171 ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 4.185 ; 4.185 ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 4.161 ; 4.161 ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 4.562 ; 4.562 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 4.561 ; 4.561 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 4.562 ; 4.562 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 4.466 ; 4.466 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 4.458 ; 4.458 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 4.467 ; 4.467 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 4.471 ; 4.471 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 4.479 ; 4.479 ; Rise       ; enterOK         ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; Q[*]         ; enterOK    ; 4.179 ; 4.179 ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 4.252 ; 4.252 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 4.285 ; 4.285 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 4.179 ; 4.179 ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 3.943 ; 3.943 ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 4.141 ; 4.141 ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 4.043 ; 4.043 ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 4.039 ; 4.039 ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 4.042 ; 4.042 ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 3.953 ; 3.953 ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 4.040 ; 4.040 ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 3.943 ; 3.943 ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 4.328 ; 4.328 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 4.443 ; 4.443 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 4.435 ; 4.435 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 4.328 ; 4.328 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 4.332 ; 4.332 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 4.348 ; 4.348 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 4.337 ; 4.337 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 4.353 ; 4.353 ; Rise       ; enterOK         ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+----------+---------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+---------+----------+---------+---------------------+
+; Worst-case Slack ; -3.922   ; -2.540  ; 0.098    ; 0.467   ; -1.941              ;
+;  clk             ; -3.922   ; -2.538  ; N/A      ; N/A     ; -1.941              ;
+;  enterOK         ; -0.938   ; -2.540  ; 0.098    ; 0.467   ; -0.742              ;
+; Design-wide TNS  ; -107.055 ; -14.379 ; 0.0      ; 0.0     ; -62.785             ;
+;  clk             ; -100.433 ; -2.538  ; N/A      ; N/A     ; -43.493             ;
+;  enterOK         ; -6.622   ; -11.841 ; 0.000    ; 0.000   ; -19.292             ;
++------------------+----------+---------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; enter     ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+; key       ; clk        ; 5.968 ; 5.968 ; Rise       ; clk             ;
+; reset     ; clk        ; 5.240 ; 5.240 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; 5.265 ; 5.265 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; 5.265 ; 5.265 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; 4.893 ; 4.893 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; 4.822 ; 4.822 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; 4.969 ; 4.969 ; Rise       ; enterOK         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; enter     ; clk        ; -1.800 ; -1.800 ; Rise       ; clk             ;
+; key       ; clk        ; -1.807 ; -1.807 ; Rise       ; clk             ;
+; reset     ; clk        ; -1.818 ; -1.818 ; Rise       ; clk             ;
+; input[*]  ; enterOK    ; -2.246 ; -2.246 ; Rise       ; enterOK         ;
+;  input[0] ; enterOK    ; -2.353 ; -2.353 ; Rise       ; enterOK         ;
+;  input[1] ; enterOK    ; -2.246 ; -2.246 ; Rise       ; enterOK         ;
+;  input[2] ; enterOK    ; -2.255 ; -2.255 ; Rise       ; enterOK         ;
+;  input[3] ; enterOK    ; -2.316 ; -2.316 ; Rise       ; enterOK         ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; Q[*]         ; enterOK    ; 11.061 ; 11.061 ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 10.356 ; 10.356 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 11.061 ; 11.061 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 10.095 ; 10.095 ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 10.396 ; 10.396 ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 10.396 ; 10.396 ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 10.054 ; 10.054 ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 10.055 ; 10.055 ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 10.052 ; 10.052 ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 10.033 ; 10.033 ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 10.051 ; 10.051 ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 10.023 ; 10.023 ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 11.094 ; 11.094 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 11.094 ; 11.094 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 11.080 ; 11.080 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 10.741 ; 10.741 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 10.738 ; 10.738 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 10.760 ; 10.760 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 10.751 ; 10.751 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 10.759 ; 10.759 ; Rise       ; enterOK         ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; Q[*]         ; enterOK    ; 4.179 ; 4.179 ; Rise       ; enterOK         ;
+;  Q[0]        ; enterOK    ; 4.252 ; 4.252 ; Rise       ; enterOK         ;
+;  Q[1]        ; enterOK    ; 4.285 ; 4.285 ; Rise       ; enterOK         ;
+;  Q[2]        ; enterOK    ; 4.179 ; 4.179 ; Rise       ; enterOK         ;
+; display1[*]  ; enterOK    ; 3.943 ; 3.943 ; Rise       ; enterOK         ;
+;  display1[0] ; enterOK    ; 4.141 ; 4.141 ; Rise       ; enterOK         ;
+;  display1[1] ; enterOK    ; 4.043 ; 4.043 ; Rise       ; enterOK         ;
+;  display1[2] ; enterOK    ; 4.039 ; 4.039 ; Rise       ; enterOK         ;
+;  display1[3] ; enterOK    ; 4.042 ; 4.042 ; Rise       ; enterOK         ;
+;  display1[4] ; enterOK    ; 3.953 ; 3.953 ; Rise       ; enterOK         ;
+;  display1[5] ; enterOK    ; 4.040 ; 4.040 ; Rise       ; enterOK         ;
+;  display1[6] ; enterOK    ; 3.943 ; 3.943 ; Rise       ; enterOK         ;
+; display2[*]  ; enterOK    ; 4.328 ; 4.328 ; Rise       ; enterOK         ;
+;  display2[0] ; enterOK    ; 4.443 ; 4.443 ; Rise       ; enterOK         ;
+;  display2[1] ; enterOK    ; 4.435 ; 4.435 ; Rise       ; enterOK         ;
+;  display2[2] ; enterOK    ; 4.328 ; 4.328 ; Rise       ; enterOK         ;
+;  display2[3] ; enterOK    ; 4.332 ; 4.332 ; Rise       ; enterOK         ;
+;  display2[4] ; enterOK    ; 4.348 ; 4.348 ; Rise       ; enterOK         ;
+;  display2[5] ; enterOK    ; 4.337 ; 4.337 ; Rise       ; enterOK         ;
+;  display2[6] ; enterOK    ; 4.353 ; 4.353 ; Rise       ; enterOK         ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 680      ; 0        ; 0        ; 0        ;
+; enterOK    ; clk      ; 2        ; 2        ; 0        ; 0        ;
+; clk        ; enterOK  ; 14       ; 0        ; 0        ; 0        ;
+; enterOK    ; enterOK  ; 43       ; 9        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 680      ; 0        ; 0        ; 0        ;
+; enterOK    ; clk      ; 2        ; 2        ; 0        ; 0        ;
+; clk        ; enterOK  ; 14       ; 0        ; 0        ; 0        ;
+; enterOK    ; enterOK  ; 43       ; 9        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; enterOK  ; 5        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; enterOK  ; 5        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 62    ; 62   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jun 01 21:42:07 2021
+Info: Command: quartus_sta vendingMachine -c vendingMachine
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'vendingMachine.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name enterOK enterOK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.922
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.922      -100.433 clk 
+    Info (332119):    -0.938        -6.622 enterOK 
+Info (332146): Worst-case hold slack is -2.540
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.540       -11.841 enterOK 
+    Info (332119):    -2.538        -2.538 clk 
+Info (332146): Worst-case recovery slack is 0.098
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.098         0.000 enterOK 
+Info (332146): Worst-case removal slack is 0.636
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.636         0.000 enterOK 
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941       -43.493 clk 
+    Info (332119):    -0.742       -19.292 enterOK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.578
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.578       -13.463 clk 
+    Info (332119):     0.344         0.000 enterOK 
+Info (332146): Worst-case hold slack is -1.345
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.345        -1.345 clk 
+    Info (332119):    -1.292        -6.142 enterOK 
+Info (332146): Worst-case recovery slack is 0.413
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.413         0.000 enterOK 
+Info (332146): Worst-case removal slack is 0.467
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.467         0.000 enterOK 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -29.380 clk 
+    Info (332119):    -0.500       -13.000 enterOK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Tue Jun 01 21:42:10 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
