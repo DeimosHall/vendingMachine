@@ -5,6 +5,7 @@ entity vendingMachine is
 
 	port (clk, reset, enter, key: in std_logic;
 			input: in std_logic_vector(3 downto 0);
+			Q: out std_logic_vector(2 downto 0) := "000";
 			display1: out std_logic_vector(6 downto 0);
 			display2: out std_logic_vector(6 downto 0));
 
@@ -142,12 +143,48 @@ begin
 		end if;
 	end process;
 	
---	statusCLK <= enterOK or resetOK or keyOK;
---	
---	process(statusCLK) begin
---		if(statusCLK'event and statusCLK = '1') then
---			currentStatus <= nextStatus;
---		end if;
---	end process;
+	with currentStatus select
+		Q <=  "110" when Start,
+				"001" when Digit1,
+				"010" when Digit2,
+				"011" when Delivery,
+				"100" when Error,
+				"000" when others;
+	
+	with number1 select
+		display1 <=
+			"0111111" when "0000", -- 0
+			"0000110" when "0001", -- 1
+			"1011011" when "0010", -- 2
+			"1001111" when "0011", -- 3
+			"1100110" when "0100", -- 4
+			"1101101" when "0101", -- 5
+			"1111101" when "0110", -- 6
+			"0000111" when "0111", -- 7
+			"1111111" when "1000", -- 8
+			"1101111" when "1001", -- 9
+			"0110111" when "1010", -- H
+			"1001110" when "1011", -- C
+			"1001111" when "1100", -- E
+			"0110000" when "1101", -- I
+			"0000000" when others;
+					
+	with number2 select
+		display2 <=
+			"0111111" when "0000", -- 0
+			"0000110" when "0001", -- 1
+			"1011011" when "0010", -- 2
+			"1001111" when "0011", -- 3
+			"1100110" when "0100", -- 4
+			"1101101" when "0101", -- 5
+			"1111101" when "0110", -- 6
+			"0000111" when "0111", -- 7
+			"1111111" when "1000", -- 8
+			"1101111" when "1001", -- 9
+			"0110111" when "1010", -- H
+			"1001110" when "1011", -- C
+			"1001111" when "1100", -- E
+			"0110000" when "1101", -- I
+			"0000000" when others;
 
 end behavioral;

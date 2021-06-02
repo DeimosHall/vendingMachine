@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vendingMachine
-Tue Jun 01 20:13:07 2021
+Tue Jun 01 20:27:51 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,10 +15,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |vendingMachine|currentStatus
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +43,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 01 20:13:07 2021           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 01 20:27:51 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; vendingMachine                                  ;
 ; Top-level Entity Name              ; vendingMachine                                  ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 22                                              ;
+; Total logic elements               ; 69                                              ;
+;     Total combinational functions  ; 66                                              ;
+;     Dedicated logic registers      ; 41                                              ;
+; Total registers                    ; 41                                              ;
+; Total pins                         ; 25                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -171,23 +170,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
+; Estimated Total logic elements              ; 69    ;
 ;                                             ;       ;
-; Total combinational functions               ; 0     ;
+; Total combinational functions               ; 66    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 30    ;
+;     -- 3 input functions                    ; 7     ;
+;     -- <=2 input functions                  ; 29    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 45    ;
+;     -- arithmetic mode                      ; 21    ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
+; Total registers                             ; 41    ;
+;     -- Dedicated logic registers            ; 41    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 22    ;
+; I/O pins                                    ; 25    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 28    ;
+; Total fan-out                               ; 335   ;
+; Average fan-out                             ; 2.54  ;
 +---------------------------------------------+-------+
 
 
@@ -196,7 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |vendingMachine            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |vendingMachine     ; work         ;
+; |vendingMachine            ; 66 (66)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |vendingMachine     ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -220,78 +224,52 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------------+
 ; Register name                          ; Reason for Removal                           ;
 +----------------------------------------+----------------------------------------------+
-; \keyFilter:bouncingCounter[2]          ; Merged with \enterFilter:bouncingCounter[2]  ;
-; \resetFilter:bouncingCounter[2]        ; Merged with \enterFilter:bouncingCounter[2]  ;
-; \keyFilter:bouncingCounter[1]          ; Merged with \enterFilter:bouncingCounter[1]  ;
-; \resetFilter:bouncingCounter[1]        ; Merged with \enterFilter:bouncingCounter[1]  ;
 ; \keyFilter:bouncingCounter[0]          ; Merged with \enterFilter:bouncingCounter[0]  ;
 ; \resetFilter:bouncingCounter[0]        ; Merged with \enterFilter:bouncingCounter[0]  ;
-; \keyFilter:bouncingCounter[21]         ; Merged with \enterFilter:bouncingCounter[21] ;
-; \resetFilter:bouncingCounter[21]       ; Merged with \enterFilter:bouncingCounter[21] ;
-; \keyFilter:bouncingCounter[20]         ; Merged with \enterFilter:bouncingCounter[20] ;
-; \resetFilter:bouncingCounter[20]       ; Merged with \enterFilter:bouncingCounter[20] ;
-; \keyFilter:bouncingCounter[19]         ; Merged with \enterFilter:bouncingCounter[19] ;
-; \resetFilter:bouncingCounter[19]       ; Merged with \enterFilter:bouncingCounter[19] ;
-; \keyFilter:bouncingCounter[18]         ; Merged with \enterFilter:bouncingCounter[18] ;
-; \resetFilter:bouncingCounter[18]       ; Merged with \enterFilter:bouncingCounter[18] ;
-; \keyFilter:bouncingCounter[17]         ; Merged with \enterFilter:bouncingCounter[17] ;
-; \resetFilter:bouncingCounter[17]       ; Merged with \enterFilter:bouncingCounter[17] ;
-; \keyFilter:bouncingCounter[16]         ; Merged with \enterFilter:bouncingCounter[16] ;
-; \resetFilter:bouncingCounter[16]       ; Merged with \enterFilter:bouncingCounter[16] ;
-; \keyFilter:bouncingCounter[15]         ; Merged with \enterFilter:bouncingCounter[15] ;
-; \resetFilter:bouncingCounter[15]       ; Merged with \enterFilter:bouncingCounter[15] ;
-; \keyFilter:bouncingCounter[14]         ; Merged with \enterFilter:bouncingCounter[14] ;
-; \resetFilter:bouncingCounter[14]       ; Merged with \enterFilter:bouncingCounter[14] ;
-; \keyFilter:bouncingCounter[13]         ; Merged with \enterFilter:bouncingCounter[13] ;
-; \resetFilter:bouncingCounter[13]       ; Merged with \enterFilter:bouncingCounter[13] ;
-; \keyFilter:bouncingCounter[12]         ; Merged with \enterFilter:bouncingCounter[12] ;
-; \resetFilter:bouncingCounter[12]       ; Merged with \enterFilter:bouncingCounter[12] ;
-; \keyFilter:bouncingCounter[11]         ; Merged with \enterFilter:bouncingCounter[11] ;
-; \resetFilter:bouncingCounter[11]       ; Merged with \enterFilter:bouncingCounter[11] ;
-; \keyFilter:bouncingCounter[10]         ; Merged with \enterFilter:bouncingCounter[10] ;
-; \resetFilter:bouncingCounter[10]       ; Merged with \enterFilter:bouncingCounter[10] ;
-; \keyFilter:bouncingCounter[9]          ; Merged with \enterFilter:bouncingCounter[9]  ;
-; \resetFilter:bouncingCounter[9]        ; Merged with \enterFilter:bouncingCounter[9]  ;
-; \keyFilter:bouncingCounter[8]          ; Merged with \enterFilter:bouncingCounter[8]  ;
-; \resetFilter:bouncingCounter[8]        ; Merged with \enterFilter:bouncingCounter[8]  ;
-; \keyFilter:bouncingCounter[7]          ; Merged with \enterFilter:bouncingCounter[7]  ;
-; \resetFilter:bouncingCounter[7]        ; Merged with \enterFilter:bouncingCounter[7]  ;
-; \keyFilter:bouncingCounter[6]          ; Merged with \enterFilter:bouncingCounter[6]  ;
-; \resetFilter:bouncingCounter[6]        ; Merged with \enterFilter:bouncingCounter[6]  ;
-; \keyFilter:bouncingCounter[5]          ; Merged with \enterFilter:bouncingCounter[5]  ;
-; \resetFilter:bouncingCounter[5]        ; Merged with \enterFilter:bouncingCounter[5]  ;
-; \keyFilter:bouncingCounter[4]          ; Merged with \enterFilter:bouncingCounter[4]  ;
-; \resetFilter:bouncingCounter[4]        ; Merged with \enterFilter:bouncingCounter[4]  ;
+; \keyFilter:bouncingCounter[1]          ; Merged with \enterFilter:bouncingCounter[1]  ;
+; \resetFilter:bouncingCounter[1]        ; Merged with \enterFilter:bouncingCounter[1]  ;
+; \keyFilter:bouncingCounter[2]          ; Merged with \enterFilter:bouncingCounter[2]  ;
+; \resetFilter:bouncingCounter[2]        ; Merged with \enterFilter:bouncingCounter[2]  ;
 ; \keyFilter:bouncingCounter[3]          ; Merged with \enterFilter:bouncingCounter[3]  ;
 ; \resetFilter:bouncingCounter[3]        ; Merged with \enterFilter:bouncingCounter[3]  ;
-; keyOK                                  ; Lost fanout                                  ;
-; enterOK                                ; Lost fanout                                  ;
-; resetOK                                ; Lost fanout                                  ;
-; previousKey                            ; Lost fanout                                  ;
-; \enterFilter:bouncingCounter[8..21]    ; Lost fanout                                  ;
-; previousEnter                          ; Lost fanout                                  ;
-; previousReset                          ; Lost fanout                                  ;
-; \enterFilter:bouncingCounter[0..7]     ; Lost fanout                                  ;
-; currentStatus.Start                    ; Lost fanout                                  ;
-; currentStatus.Digit1                   ; Lost fanout                                  ;
-; currentStatus.Digit2                   ; Lost fanout                                  ;
-; currentStatus.Delivery                 ; Lost fanout                                  ;
-; currentStatus.Error                    ; Lost fanout                                  ;
-; Total Number of Removed Registers = 77 ;                                              ;
+; \keyFilter:bouncingCounter[4]          ; Merged with \enterFilter:bouncingCounter[4]  ;
+; \resetFilter:bouncingCounter[4]        ; Merged with \enterFilter:bouncingCounter[4]  ;
+; \keyFilter:bouncingCounter[5]          ; Merged with \enterFilter:bouncingCounter[5]  ;
+; \resetFilter:bouncingCounter[5]        ; Merged with \enterFilter:bouncingCounter[5]  ;
+; \keyFilter:bouncingCounter[6]          ; Merged with \enterFilter:bouncingCounter[6]  ;
+; \resetFilter:bouncingCounter[6]        ; Merged with \enterFilter:bouncingCounter[6]  ;
+; \keyFilter:bouncingCounter[7]          ; Merged with \enterFilter:bouncingCounter[7]  ;
+; \resetFilter:bouncingCounter[7]        ; Merged with \enterFilter:bouncingCounter[7]  ;
+; \keyFilter:bouncingCounter[8]          ; Merged with \enterFilter:bouncingCounter[8]  ;
+; \resetFilter:bouncingCounter[8]        ; Merged with \enterFilter:bouncingCounter[8]  ;
+; \keyFilter:bouncingCounter[9]          ; Merged with \enterFilter:bouncingCounter[9]  ;
+; \resetFilter:bouncingCounter[9]        ; Merged with \enterFilter:bouncingCounter[9]  ;
+; \keyFilter:bouncingCounter[10]         ; Merged with \enterFilter:bouncingCounter[10] ;
+; \resetFilter:bouncingCounter[10]       ; Merged with \enterFilter:bouncingCounter[10] ;
+; \keyFilter:bouncingCounter[11]         ; Merged with \enterFilter:bouncingCounter[11] ;
+; \resetFilter:bouncingCounter[11]       ; Merged with \enterFilter:bouncingCounter[11] ;
+; \keyFilter:bouncingCounter[12]         ; Merged with \enterFilter:bouncingCounter[12] ;
+; \resetFilter:bouncingCounter[12]       ; Merged with \enterFilter:bouncingCounter[12] ;
+; \keyFilter:bouncingCounter[13]         ; Merged with \enterFilter:bouncingCounter[13] ;
+; \resetFilter:bouncingCounter[13]       ; Merged with \enterFilter:bouncingCounter[13] ;
+; \keyFilter:bouncingCounter[14]         ; Merged with \enterFilter:bouncingCounter[14] ;
+; \resetFilter:bouncingCounter[14]       ; Merged with \enterFilter:bouncingCounter[14] ;
+; \keyFilter:bouncingCounter[15]         ; Merged with \enterFilter:bouncingCounter[15] ;
+; \resetFilter:bouncingCounter[15]       ; Merged with \enterFilter:bouncingCounter[15] ;
+; \keyFilter:bouncingCounter[16]         ; Merged with \enterFilter:bouncingCounter[16] ;
+; \resetFilter:bouncingCounter[16]       ; Merged with \enterFilter:bouncingCounter[16] ;
+; \keyFilter:bouncingCounter[17]         ; Merged with \enterFilter:bouncingCounter[17] ;
+; \resetFilter:bouncingCounter[17]       ; Merged with \enterFilter:bouncingCounter[17] ;
+; \keyFilter:bouncingCounter[18]         ; Merged with \enterFilter:bouncingCounter[18] ;
+; \resetFilter:bouncingCounter[18]       ; Merged with \enterFilter:bouncingCounter[18] ;
+; \keyFilter:bouncingCounter[19]         ; Merged with \enterFilter:bouncingCounter[19] ;
+; \resetFilter:bouncingCounter[19]       ; Merged with \enterFilter:bouncingCounter[19] ;
+; \keyFilter:bouncingCounter[20]         ; Merged with \enterFilter:bouncingCounter[20] ;
+; \resetFilter:bouncingCounter[20]       ; Merged with \enterFilter:bouncingCounter[20] ;
+; \keyFilter:bouncingCounter[21]         ; Merged with \enterFilter:bouncingCounter[21] ;
+; \resetFilter:bouncingCounter[21]       ; Merged with \enterFilter:bouncingCounter[21] ;
+; Total Number of Removed Registers = 44 ;                                              ;
 +----------------------------------------+----------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                           ;
-+---------------+--------------------+----------------------------------------------------------------------------------+
-; Register name ; Reason for Removal ; Registers Removed due to This Register                                           ;
-+---------------+--------------------+----------------------------------------------------------------------------------+
-; keyOK         ; Lost Fanouts       ; previousKey, \enterFilter:bouncingCounter[21], \enterFilter:bouncingCounter[20], ;
-;               ;                    ; \enterFilter:bouncingCounter[19], \enterFilter:bouncingCounter[18],              ;
-;               ;                    ; \enterFilter:bouncingCounter[17]                                                 ;
-; enterOK       ; Lost Fanouts       ; previousEnter                                                                    ;
-; resetOK       ; Lost Fanouts       ; previousReset                                                                    ;
-+---------------+--------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -299,12 +277,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 41    ;
+; Number of registers using Synchronous Clear  ; 22    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -324,50 +302,23 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jun 01 20:13:03 2021
+    Info: Processing started: Tue Jun 01 20:27:46 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vendingMachine -c vendingMachine
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vendingmachine.vhd
     Info (12022): Found design unit 1: vendingMachine-behavioral
     Info (12023): Found entity 1: vendingMachine
 Info (12127): Elaborating entity "vendingMachine" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at vendingMachine.vhd(8): used implicit default value for signal "display1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at vendingMachine.vhd(9): used implicit default value for signal "display2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at vendingMachine.vhd(25): object "number1" assigned a value but never read
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "display1[0]" is stuck at GND
-    Warning (13410): Pin "display1[1]" is stuck at GND
-    Warning (13410): Pin "display1[2]" is stuck at GND
-    Warning (13410): Pin "display1[3]" is stuck at GND
-    Warning (13410): Pin "display1[4]" is stuck at GND
-    Warning (13410): Pin "display1[5]" is stuck at GND
-    Warning (13410): Pin "display1[6]" is stuck at GND
-    Warning (13410): Pin "display2[0]" is stuck at GND
-    Warning (13410): Pin "display2[1]" is stuck at GND
-    Warning (13410): Pin "display2[2]" is stuck at GND
-    Warning (13410): Pin "display2[3]" is stuck at GND
-    Warning (13410): Pin "display2[4]" is stuck at GND
-    Warning (13410): Pin "display2[5]" is stuck at GND
-    Warning (13410): Pin "display2[6]" is stuck at GND
-Info (17049): 33 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "input[0]"
-    Warning (15610): No output dependent on input pin "input[1]"
-    Warning (15610): No output dependent on input pin "input[2]"
-    Warning (15610): No output dependent on input pin "input[3]"
-    Warning (15610): No output dependent on input pin "key"
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "enter"
-    Warning (15610): No output dependent on input pin "reset"
-Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 94 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 14 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Tue Jun 01 20:13:07 2021
-    Info: Elapsed time: 00:00:04
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 69 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4644 megabytes
+    Info: Processing ended: Tue Jun 01 20:27:51 2021
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:03
 
 
