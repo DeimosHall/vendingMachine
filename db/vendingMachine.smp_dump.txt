@@ -1,0 +1,8 @@
+
+State Machine - |vendingMachine|currentStatus
+Name currentStatus.Error currentStatus.Delivery currentStatus.Digit2 currentStatus.Digit1 currentStatus.Start 
+currentStatus.Start 0 0 0 0 0 
+currentStatus.Digit1 0 0 0 1 1 
+currentStatus.Digit2 0 0 1 0 1 
+currentStatus.Delivery 0 1 0 0 1 
+currentStatus.Error 1 0 0 0 1 
